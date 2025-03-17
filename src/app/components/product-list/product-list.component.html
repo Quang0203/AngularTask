@@ -1,0 +1,10 @@
+<div class="product-list">
+    <h2>Product List</h2>
+    <div *ngIf="error" class="error">{{ error }}</div>
+    <ul>
+      <li *ngFor="let product of products">
+        <a [routerLink]="['/products', product.id]">{{ product.name }}</a>
+      </li>
+    </ul>
+  </div>
+  

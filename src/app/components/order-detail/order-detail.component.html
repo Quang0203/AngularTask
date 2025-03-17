@@ -1,0 +1,9 @@
+<div class="order-detail" *ngIf="order">
+    <h2>Order Details for ID: {{ order.orderId }}</h2>
+    <p>User ID: {{ order.userId }}</p>
+    <p>Order Details: {{ order.orderDetails }}</p>
+    <p>Status: {{ order.status }}</p>
+    <!-- Hiển thị các sản phẩm của đơn hàng nếu có -->
+  </div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+  

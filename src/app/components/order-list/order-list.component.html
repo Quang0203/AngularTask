@@ -1,0 +1,10 @@
+<div class="order-list">
+    <h2>Order List</h2>
+    <div *ngIf="error" class="error">{{ error }}</div>
+    <ul>
+      <li *ngFor="let order of orders">
+        <a [routerLink]="['/orders', order.orderId]">Order ID: {{ order.orderId }}</a>
+      </li>
+    </ul>
+  </div>
+  

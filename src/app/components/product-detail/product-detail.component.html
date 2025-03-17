@@ -1,0 +1,7 @@
+<div class="product-detail" *ngIf="product">
+    <h2>{{ product.name }}</h2>
+    <p>{{ product.description }}</p>
+    <!-- Hiển thị thêm các thông tin khác của sản phẩm -->
+  </div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+  
