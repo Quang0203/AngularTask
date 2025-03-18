@@ -11,14 +11,25 @@ import { CommonModule } from '@angular/common';
 })
 export class UserProfileComponent implements OnInit {
   profile: any;
-  error: string = ''; // Fix lỗi thiếu biến error
+  message: string = ''; 
+  error: string = ''; 
 
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
-    this.authService.getUserProfile().subscribe(
-      (data: any) => { this.profile = data; },
-      (err: any) => { this.error = 'Failed to load user profile.'; }
-    );
+    this.authService.getUserProfile().subscribe({
+      next: (response: any) => { 
+        if (response?.message) {
+          this.message = response.message; // Lấy message từ API
+        }
+        if (response?.data) {
+          this.profile = response.data; // Nếu có data thì lấy
+        }
+      },
+      error: (err: any) => { 
+        this.error = 'Failed to load user profile.'; 
+        this.message = err.message || 'An unknown error occurred';
+      }
+    });
   }
-}
+}  

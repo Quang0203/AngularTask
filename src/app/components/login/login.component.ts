@@ -28,6 +28,6 @@ export class LoginComponent {
 
   onSubmit() {
     // Thay vì gọi authService.login, gọi keycloak.login để chuyển hướng tới trang đăng nhập của Keycloak
-    this.keycloak.login();
+    this.keycloak.login({redirectUri: 'http://localhost:4200/user-profile'});
   }
 }

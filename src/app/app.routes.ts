@@ -9,7 +9,7 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import { AdminProfileComponent } from './components/admin-profile/admin-profile.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: '/user-profile', pathMatch: 'full' }, // default route chuyển đến home
+  // { path: '', redirectTo: '/user-profile', pathMatch: 'full' }, // default route chuyển đến home
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'products', component: ProductListComponent },

@@ -1,6 +1,6 @@
-<div class="user-profile" *ngIf="profile">
-    <h2>User Profile</h2>
-    <p>{{ profile.data }}</p>
-  </div>
-  <div *ngIf="error" class="error">{{ error }}</div>
-  
+<div class="user-profile" *ngIf="profile || message">
+  <h2>User Profile</h2>
+  <p *ngIf="profile">{{ profile.data }}</p> 
+  <p *ngIf="message">{{ message }}</p> <!-- Hiển thị message nếu có -->
+</div>
+<div *ngIf="error" class="error">{{ error }}</div>
