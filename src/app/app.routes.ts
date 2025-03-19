@@ -7,6 +7,8 @@ import { OrderListComponent } from './components/order-list/order-list.component
 import { OrderDetailComponent } from './components/order-detail/order-detail.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { AdminProfileComponent } from './components/admin-profile/admin-profile.component';
+import { UserHomeComponent } from './components/user-home/user-home.component';
+import { AdminHomeComponent } from './components/admin-home/admin-home.component';
 
 export const routes: Routes = [
   // { path: '', redirectTo: '/user-profile', pathMatch: 'full' }, // default route chuyển đến home
@@ -17,5 +19,7 @@ export const routes: Routes = [
   { path: 'orders', component: OrderListComponent },
   { path: 'orders/:id', component: OrderDetailComponent },
   { path: 'user-profile', component: UserProfileComponent },
-  { path: 'admin-profile', component: AdminProfileComponent }
+  { path: 'admin-profile', component: AdminProfileComponent },
+  { path: 'user-home', component: UserHomeComponent },
+  { path: 'admin-home', component: AdminHomeComponent }
 ];

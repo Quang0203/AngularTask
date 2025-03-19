@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
     private router: Router,
     private keycloak: KeycloakService,
     private authService: AuthService
-  ) {}
+  ) { }
 
   async ngOnInit(): Promise<void> {
     try {
@@ -45,16 +45,16 @@ export class AppComponent implements OnInit {
             // Sau khi lưu token thành công, chuyển hướng dựa trên role
             if (roles.includes('admin')) {
               console.log('User is logged in as admin.');
-              this.router.navigate(['/admin-profile']);
+              this.router.navigate(['/admin-home']);
             } else {
               console.log('User is logged in as user.');
-              this.router.navigate(['/user-profile']);
+              this.router.navigate(['/user-home']);
             }
           },
           error: err => {
             console.error('Failed to save token in BE', err);
-            // Nếu lưu token không thành công, bạn có thể vẫn chuyển hướng hoặc xử lý lỗi phù hợp
-            this.router.navigate(['/user-profile']);
+            // Nếu lưu token không thành công, bạn có thể chuyển hướng mặc định
+            this.router.navigate(['/user-home']);
           }
         });
       } else {

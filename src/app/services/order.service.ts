@@ -17,6 +17,7 @@ export class OrderService {
   }
 
   getOrdersByUserId(userId: string): Observable<any> {
+    console.log('Loading orders for userId:', userId);
     return this.http.get(`${this.baseUrl}/user/${userId}`);
   }
 

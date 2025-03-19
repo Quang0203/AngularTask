@@ -19,17 +19,15 @@ export class AdminProfileComponent implements OnInit {
   ngOnInit(): void {
     this.authService.getAdminProfile().subscribe({
       next: (response: any) => { 
-        if (response?.message) {
-          this.message = response.message; // Lấy message từ API
-        }
-        if (response?.data) {
-          this.profile = response.data; // Nếu có data thì lấy
-        }
+        // response có cấu trúc: { code, message, timestamp, data }
+        this.message = response.message;
+        this.profile = response.data;
       },
       error: (err: any) => { 
-        this.error = 'Failed to load user profile.'; 
+        console.log('Error loading admin profile', err);
+        this.error = 'Failed to load admin profile.'; 
         this.message = err.message || 'An unknown error occurred';
       }
     });
   }
-}  
+}
