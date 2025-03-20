@@ -3,7 +3,7 @@
     <div *ngIf="error" class="error">{{ error }}</div>
     <ul>
       <li *ngFor="let product of products">
-        <a [routerLink]="['/products', product.id]">{{ product.name }}</a>
+        <a [routerLink]="['/products', product.productId]">{{ product.productName }} - {{ product.productPrice | currency:'VND' }}</a>
       </li>
     </ul>
   </div>

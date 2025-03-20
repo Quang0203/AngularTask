@@ -1,9 +1,15 @@
-<div class="order-detail" *ngIf="order">
+<div class="order-detail-container">
+  <div class="card" *ngIf="order; else errorTemplate">
     <h2>Order Details for ID: {{ order.orderId }}</h2>
-    <p>User ID: {{ order.userId }}</p>
-    <p>Order Details: {{ order.orderDetails }}</p>
-    <p>Status: {{ order.status }}</p>
-    <!-- Hiển thị các sản phẩm của đơn hàng nếu có -->
+    <div class="order-info">
+      <p><strong>User ID:</strong> {{ order.userId }}</p>
+      <p><strong>Order Details:</strong> {{ order.orderDetails }}</p>
+      <p><strong>Status:</strong> {{ order.status }}</p>
+    </div>
   </div>
-  <div *ngIf="error" class="error">{{ error }}</div>
-  
+  <ng-template #errorTemplate>
+    <div *ngIf="error" class="error-message">
+      {{ error }}
+    </div>
+  </ng-template>
+</div>

@@ -13,7 +13,7 @@ export class OrderService {
   constructor(private http: HttpClient) { }
 
   getOrders(): Observable<any> {
-    return this.http.get(`${this.baseUrl}`);
+    return this.http.get(`${this.baseUrl}/all`);
   }
 
   getOrdersByUserId(userId: string): Observable<any> {

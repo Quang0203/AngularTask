@@ -55,6 +55,9 @@ export class UserHomeComponent implements OnInit {
           this.profile = response.data;
           console.log('User profile:', this.profile);
           this.loadProducts();
+          this.productService.getProducts().subscribe(response => {
+            console.log('Response:', response);
+          });
           // Sử dụng userId lấy từ token để gọi API đơn hàng
           if (userId) {
             this.loadOrders(userId);
@@ -88,5 +91,9 @@ export class UserHomeComponent implements OnInit {
 
   goToProfile(): void {
     this.router.navigate(['/user-profile']);
+  }
+
+  logout(): void {
+    this.keycloak.logout('http://localhost:4200/');
   }
 }

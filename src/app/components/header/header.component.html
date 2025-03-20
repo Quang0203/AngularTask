@@ -1,0 +1,22 @@
+<header class="main-header">
+    <div class="brand" (click)="navigateTo('/')">
+      Kedo's Shop
+    </div>
+    <nav class="navbar">
+      <ul>
+        <li *ngFor="let item of navItems" (click)="navigateTo(item.route)">
+          {{ item.label }}
+        </li>
+      </ul>
+    </nav>
+    <div class="account-section" (click)="toggleDropdown()">
+      <img src="src/assets/Client256.png" alt="Profile" class="profile-icon">
+      <span class="account-name">{{ profileName }}</span>
+      <div class="dropdown" *ngIf="dropdownVisible">
+        <ul>
+          <li (click)="viewProfile()">View Profile</li>
+          <li (click)="logout()">Logout</li>
+        </ul>
+      </div>
+    </div>
+  </header>

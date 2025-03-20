@@ -1,25 +1,18 @@
 <div class="admin-home">
-    <header>
-      <h1>Admin Dashboard</h1>
-    </header>
-    <nav class="taskbar">
-      <ul>
-        <li *ngFor="let task of tasks">
-          <button (click)="navigateTo(task.route)">{{ task.label }}</button>
-        </li>
-      </ul>
-    </nav>
-    <section class="overview">
-      <div class="summary">
-        <div class="order-summary">
-          <h3>Đơn hàng</h3>
-          <p>Total Orders: {{ orders.length }}</p>
-        </div>
-        <div class="product-summary">
-          <h3>Sản phẩm</h3>
-          <p>Total Products: {{ products.length }}</p>
-        </div>
+  <header>
+    <h1>Admin Dashboard</h1>  
+  </header>
+  <section class="overview">
+    <div class="summary">
+      <div class="order-summary">
+        <h3>Đơn hàng</h3>
+        <p>Total Orders: {{ orders.length }}</p>
       </div>
-    </section>
-    <div *ngIf="error" class="error">{{ error }}</div>
-  </div>
+      <div class="product-summary">
+        <h3>Sản phẩm</h3>
+        <p>Total Products: {{ products.length }}</p>
+      </div>
+    </div>
+  </section>
+  <div *ngIf="error" class="error">{{ error }}</div>
+</div>

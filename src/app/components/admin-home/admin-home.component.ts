@@ -2,14 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { OrderService } from '../../services/order.service';
 import { ProductService } from '../../services/product.service';
-import { CommonModule } from '@angular/common'; 
+import { KeycloakService } from 'keycloak-angular';
+import { CommonModule } from '@angular/common';
 
 @Component({
-    selector: 'app-admin-home',
-    standalone: true,
-    imports: [CommonModule],
-    templateUrl: './admin-home.component.html',
-    styleUrls: ['./admin-home.component.css']
+  selector: 'app-admin-home',
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: './admin-home.component.html',
+  styleUrls: ['./admin-home.component.css']
 })
 export class AdminHomeComponent implements OnInit {
   orders: any[] = [];
@@ -25,7 +26,8 @@ export class AdminHomeComponent implements OnInit {
   constructor(
     private orderService: OrderService,
     private productService: ProductService,
-    private router: Router
+    private router: Router,
+    private keycloak: KeycloakService
   ) {}
 
   ngOnInit(): void {
